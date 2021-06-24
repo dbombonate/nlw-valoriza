@@ -1,16 +1,12 @@
+import 'reflect-metadata';
 import express from 'express';
+import { router } from './routes'; 
+
+import "./database";
 
 const app = express();
 
-/*
- * GET => Buscar informação
- * POST => Inserir (Criar) informação
- * PUT => Atualizar uma informação existente
- * DELETE => Remover um dado
- * PATCH => Alterer informação específica 
- */
+app.use(express.json());
+app.use(router);
 
-app.get('/test', (req, res) => res.send("Rota de GET no recurso test"));
-
-app.post('/test-post', (req, res) => res.send("Rota de POST no recurso test"))
 app.listen(3000, () => console.log("Server is running on port 3000"));
