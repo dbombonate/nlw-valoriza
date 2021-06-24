@@ -11,7 +11,6 @@ class CreateUserController {
       console.log(user);
       return response.json(user);      
     } catch (err) {
-      console.log(err);
         return response.json({"error": "User already exists"});
     }
   }
